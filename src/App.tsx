@@ -71,7 +71,7 @@ const PROJECTS = [
     category: 'Lead Gen Platform',
     desc: 'France\'s leading electrical connection request platform. Multi-step funnel converting Google Ads traffic into qualified, paid service requests.',
     url: 'raccordement-connect.com',
-    metrics: ['19.5% CTR', '45% Margin', '€4K+ MRR'],
+    metrics: ['19.5% CTR', '45% Margin', '\u20ac4K+ MRR'],
     color: '#3b82f6',
   },
   {
@@ -184,28 +184,21 @@ function Services() {
           <h2 className="section-title">Services built for<br /><span className="text-accent">profitable growth</span></h2>
         </div>
         <div className="services-grid">
-          {SERVICES.map((s) => {
-            const anim = useInView(0.2)
-            return (
-              <div
-                key={s.num}
-                ref={anim.ref}
-                className={`service-card ${anim.isVisible ? 'visible' : ''}`}
-              >
-                <div className="service-img-wrap">
-                  <img src={s.img} alt={s.title} loading="lazy" />
-                  <div className="service-num">{s.num}</div>
-                </div>
-                <div className="service-body">
-                  <h3 className="service-title">{s.title}</h3>
-                  <p className="service-desc">{s.desc}</p>
-                  <div className="service-tags">
-                    {s.tags.map(t => <span key={t} className="tag">{t}</span>)}
-                  </div>
+          {SERVICES.map((s) => (
+            <div key={s.num} className="service-card">
+              <div className="service-img-wrap">
+                <img src={s.img} alt={s.title} loading="lazy" />
+                <div className="service-num">{s.num}</div>
+              </div>
+              <div className="service-body">
+                <h3 className="service-title">{s.title}</h3>
+                <p className="service-desc">{s.desc}</p>
+                <div className="service-tags">
+                  {s.tags.map(t => <span key={t} className="tag">{t}</span>)}
                 </div>
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -213,9 +206,8 @@ function Services() {
 }
 
 function Stats() {
-  const anim = useInView(0.2)
   return (
-    <section className={`stats ${anim.isVisible ? 'visible' : ''}`} ref={anim.ref}>
+    <section className="stats">
       <div className="stats-blob">
         <img src="/assets/gradients/blob-5.png" alt="" />
       </div>
@@ -252,30 +244,26 @@ function Work() {
           <h2 className="section-title">Products that<br /><span className="text-accent">perform</span></h2>
         </div>
         <div className="work-grid">
-          {PROJECTS.map((p, i) => {
-            const anim = useInView(0.15)
-            return (
-              <div
-                key={p.name}
-                ref={anim.ref}
-                className={`work-card ${anim.isVisible ? 'visible' : ''}`}
-                style={{ animationDelay: `${i * 0.1}s`, '--project-color': p.color } as React.CSSProperties}
-              >
-                <div className="work-card-top">
-                  <span className="work-category">{p.category}</span>
-                  <div className="work-dot" style={{ background: p.color }} />
-                </div>
-                <h3 className="work-name">{p.name}</h3>
-                <p className="work-desc">{p.desc}</p>
-                <div className="work-metrics">
-                  {p.metrics.map(m => (
-                    <span key={m} className="work-metric">{m}</span>
-                  ))}
-                </div>
-                <div className="work-url">{p.url}</div>
+          {PROJECTS.map((p) => (
+            <div
+              key={p.name}
+              className="work-card"
+              style={{ '--project-color': p.color } as React.CSSProperties}
+            >
+              <div className="work-card-top">
+                <span className="work-category">{p.category}</span>
+                <div className="work-dot" style={{ background: p.color }} />
               </div>
-            )
-          })}
+              <h3 className="work-name">{p.name}</h3>
+              <p className="work-desc">{p.desc}</p>
+              <div className="work-metrics">
+                {p.metrics.map(m => (
+                  <span key={m} className="work-metric">{m}</span>
+                ))}
+              </div>
+              <div className="work-url">{p.url}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -304,9 +292,8 @@ function Brands() {
 }
 
 function About() {
-  const anim = useInView(0.2)
   return (
-    <section id="about" className={`about ${anim.isVisible ? 'visible' : ''}`} ref={anim.ref}>
+    <section id="about" className="about">
       <div className="about-blob">
         <img src="/assets/gradients/blob-2.png" alt="" />
       </div>
@@ -358,23 +345,26 @@ function About() {
 }
 
 function Contact() {
-  const anim = useInView(0.2)
   return (
-    <section id="contact" className={`contact ${anim.isVisible ? 'visible' : ''}`} ref={anim.ref}>
-      <div className="contact-blob">
-        <img src="/assets/gradients/blob-3.png" alt="" />
-      </div>
+    <section id="contact" className="contact">
       <div className="section-container">
         <div className="contact-inner">
           <span className="section-label center">Let's talk</span>
+          <hr className="contact-rule" />
           <h2 className="contact-title">Ready to turn your<br />ad spend into <span className="text-accent">profit</span>?</h2>
           <p className="contact-sub">
             We take on a limited number of projects to ensure every client gets the
             attention they deserve. If you're serious about growth, let's talk.
           </p>
-          <a href="mailto:contact@menana.net" className="btn btn-primary btn-large">
-            contact@menana.net
-          </a>
+          <div className="contact-actions">
+            <a href="mailto:contact@menana.net" className="btn btn-primary btn-large">
+              contact@menana.net
+            </a>
+            <span className="contact-or">or</span>
+            <a href="https://menana.net" className="btn btn-ghost" target="_blank" rel="noopener">
+              Visit menana.net
+            </a>
+          </div>
         </div>
       </div>
     </section>
