@@ -9,7 +9,7 @@ const insights = [
     id: 1,
     title: "Why Your Landing Page Isn't Converting",
     excerpt: "The 5 conversion killers we see on every client audit, and the exact fixes that move the needle.",
-    image: "/images/bg-1.png",
+    image: "/images/markeing457.jpg",
     date: "Jan 15, 2026",
     readTime: "5 min read",
   },
@@ -17,7 +17,7 @@ const insights = [
     id: 2,
     title: "Google Ads: CTR vs. Conversion Rate",
     excerpt: "A high CTR means nothing if your funnel leaks. Here's how to optimize the full journey from click to payment.",
-    image: "/images/bg-2.png",
+    image: "/images/marketing567.jpg",
     date: "Dec 28, 2025",
     readTime: "4 min read",
   },
@@ -25,7 +25,7 @@ const insights = [
     id: 3,
     title: "Full-Stack Marketing: Code + Ads",
     excerpt: "Why the best marketing teams write code, and how owning your tech stack gives you an unfair advantage.",
-    image: "/images/bg-3.png",
+    image: "/images/marketing666.jpg",
     date: "Nov 10, 2025",
     readTime: "6 min read",
   },
@@ -40,7 +40,7 @@ export function Insights() {
             Insights
           </SectionTitle>
           <Link
-            href="#"
+            href="/insights"
             className="hidden md:inline-flex items-center gap-2 text-sm transition-colors"
             style={{ color: "#203eec" }}
           >
@@ -51,7 +51,7 @@ export function Insights() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {insights.map((insight) => (
-            <Link key={insight.id} href="#" className="group block">
+            <Link key={insight.id} href="/insights" className="group block">
               <article className="h-full">
                 <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-secondary mb-4">
                   <img
@@ -78,7 +78,7 @@ export function Insights() {
 
         <div className="md:hidden mt-8 text-center">
           <Link
-            href="#"
+            href="/insights"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium border rounded-full hover:bg-secondary transition-colors"
             style={{ color: "#203eec", borderColor: "#203eec" }}
           >

@@ -49,7 +49,7 @@ export function SelectedWorks() {
             Selected work
           </SectionTitle>
           <Link
-            href="#"
+            href="/works"
             className="hidden md:inline-flex items-center gap-2 text-sm transition-colors"
             style={{ color: "#203eec" }}
           >
@@ -68,7 +68,7 @@ export function SelectedWorks() {
                 zIndex: index + 1,
               }}
             >
-              <Link href="#" className="group block pt-10">
+              <Link href="/works" className="group block pt-10">
                 <article className="overflow-hidden rounded-2xl md:rounded-3xl border border-border bg-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   {/* Image */}
                   <div className="relative aspect-[2/1] overflow-hidden bg-secondary">
@@ -113,7 +113,7 @@ export function SelectedWorks() {
         {/* Mobile View All */}
         <div className="md:hidden mt-8 text-center">
           <Link
-            href="#"
+            href="/works"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium border rounded-full hover:bg-secondary transition-colors"
             style={{ color: "#203eec", borderColor: "#203eec" }}
           >

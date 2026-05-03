@@ -2,6 +2,9 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter_Tight } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
+import { GradientBar } from "@/components/ui/gradient-bar"
 
 import "./globals.css"
 
@@ -36,7 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${interTight.className} font-sans antialiased`}>
-        {children}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <GradientBar />
         <Analytics />
       </body>
     </html>

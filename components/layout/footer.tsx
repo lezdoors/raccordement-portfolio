@@ -12,10 +12,10 @@ const socialLinks = [
 
 const footerLinks = [
   { href: "/", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#works", label: "Works" },
-  { href: "#insights", label: "Insights" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/works", label: "Works" },
+  { href: "/insights", label: "Insights" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Footer() {

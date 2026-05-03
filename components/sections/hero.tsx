@@ -2,39 +2,10 @@
 
 import Link from "next/link"
 import { ArrowDown } from "lucide-react"
-import { useEffect, useState } from "react"
 
 export function Hero() {
   const titleText = "Building funnels that turn clicks into revenue"
   const words = titleText.split(" ")
-  const [maskReveal, setMaskReveal] = useState(0)
-  const [opacity, setOpacity] = useState(0)
-  const [isDesktop, setIsDesktop] = useState(false)
-
-  useEffect(() => {
-    const checkDesktop = () => {
-      setIsDesktop(window.innerWidth >= 768)
-    }
-
-    checkDesktop()
-    window.addEventListener("resize", checkDesktop)
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
-      const maxScroll = 500
-      const revealPercentage = Math.min(100, (scrollPosition / maxScroll) * 100)
-      const calculatedOpacity = Math.min(1, scrollPosition / maxScroll)
-      setMaskReveal(revealPercentage)
-      setOpacity(calculatedOpacity)
-    }
-
-    handleScroll()
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-      window.removeEventListener("resize", checkDesktop)
-    }
-  }, [])
 
   return (
     <section className="min-h-screen flex flex-col justify-center pt-20 relative overflow-hidden">
@@ -78,7 +49,7 @@ export function Hero() {
 
           <div className="flex flex-row items-start gap-4 mt-10">
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white rounded-full transition-all relative overflow-hidden group"
               style={{
                 background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
@@ -94,7 +65,7 @@ export function Hero() {
               Start a Project
             </Link>
             <Link
-              href="#works"
+              href="/works"
               className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium transition-colors"
               style={{ color: "#203eec" }}
             >
@@ -106,15 +77,13 @@ export function Hero() {
       </div>
 
       <div className="w-full mt-8">
-        <img
-          src="/images/designer.png"
-          alt="Digital marketing workspace"
-          className="w-full h-auto transition-all duration-100 ease-out"
-          style={{
-            opacity: opacity,
-            clipPath: isDesktop ? `inset(${100 - maskReveal}% 0 0 0)` : "none",
-          }}
-        />
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+          <img
+            src="/images/hero-presentation.jpg"
+            alt="Team presenting Raccordement Connect digital platform"
+            className="w-full h-auto rounded-2xl md:rounded-3xl"
+          />
+        </div>
       </div>
     </section>
   )
