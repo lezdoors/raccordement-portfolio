@@ -78,11 +78,15 @@ export function Hero() {
 
       <div className="w-full mt-8">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12">
-          <img
-            src="/images/hero-presentation.jpg"
-            alt="Team presenting Raccordement Connect digital platform"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-auto rounded-2xl md:rounded-3xl"
-          />
+          >
+            <source src="/images/hero-video.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
