@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { SectionTitle } from "@/components/ui/section-title"
@@ -11,7 +10,7 @@ const works = [
     title: "Raccordement Connect",
     category: "Lead Generation",
     description: "High-converting multi-step funnel for electrical connection requests in France, powered by Google Ads",
-    image: "/images/work-onboarding.png",
+    image: "/images/work-1.jpg",
     tags: ["Next.js", "Stripe", "Google Ads", "Supabase"],
   },
   {
@@ -19,7 +18,7 @@ const works = [
     title: "Demande Raccordement",
     category: "Service Platform",
     description: "Streamlined application portal with integrated payments and CRM automation for utility services",
-    image: "/images/work-fashion.png",
+    image: "/images/work-2.jpg",
     tags: ["React", "Supabase", "Stripe", "SEO"],
   },
   {
@@ -27,7 +26,7 @@ const works = [
     title: "Maison Chapuis",
     category: "E-commerce",
     description: "Premium e-commerce storefront for luxury Moroccan ceramics, targeting the US market",
-    image: "/images/work-tasks.png",
+    image: "/images/work-3.jpg",
     tags: ["Vite", "Stripe", "E-commerce", "Branding"],
   },
   {
@@ -35,7 +34,7 @@ const works = [
     title: "Sajdah Prayer App",
     category: "Mobile App",
     description: "Beautiful iOS prayer app with real-time adhan notifications and Qibla compass, live on the App Store",
-    image: "/images/work-crypto.png",
+    image: "/images/work-4.jpg",
     tags: ["React Native", "Expo", "iOS", "App Store"],
   },
 ]
@@ -73,11 +72,10 @@ export function SelectedWorks() {
                 <article className="overflow-hidden rounded-2xl md:rounded-3xl border border-border bg-card transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   {/* Image */}
                   <div className="relative aspect-[2/1] overflow-hidden bg-secondary">
-                    <Image
-                      src={work.image || "/placeholder.svg"}
+                    <img
+                      src={work.image}
                       alt={work.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 

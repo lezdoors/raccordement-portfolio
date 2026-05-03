@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { SectionTitle } from "@/components/ui/section-title"
 
 const testimonials = [
@@ -89,7 +88,6 @@ export function Testimonials() {
       <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-20 hidden lg:block" />
 
       <div className="hidden lg:block pl-6 md:pl-12">
-        {/* Section Header */}
         <div className="mb-12 md:mb-16 max-w-[1280px]">
           <SectionTitle className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
             What clients say
@@ -111,12 +109,12 @@ export function Testimonials() {
                 className="relative flex-shrink-0 w-[85vw] md:w-[400px] p-6 md:p-8 border bg-card hover:shadow-lg transition-shadow overflow-hidden border-zinc-100 md:px-6 md:py-6 rounded-3xl"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Image
-                    src={testimonial.avatar || "/placeholder.svg"}
+                  <img
+                    src={testimonial.avatar}
                     alt={testimonial.author}
                     width={48}
                     height={48}
-                    className="rounded-full"
+                    className="rounded-full w-12 h-12 object-cover"
                   />
                   <div>
                     <div className="font-semibold">{testimonial.author}</div>
@@ -152,12 +150,12 @@ export function Testimonials() {
                 className="relative flex-shrink-0 w-[85vw] md:w-[400px] p-6 md:p-8 border bg-card hover:shadow-lg transition-shadow overflow-hidden border-zinc-100 md:px-6 md:py-6 rounded-3xl"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Image
-                    src={testimonial.avatar || "/placeholder.svg"}
+                  <img
+                    src={testimonial.avatar}
                     alt={testimonial.author}
                     width={48}
                     height={48}
-                    className="rounded-full"
+                    className="rounded-full w-12 h-12 object-cover"
                   />
                   <div>
                     <div className="font-semibold">{testimonial.author}</div>
@@ -198,12 +196,12 @@ export function Testimonials() {
             >
               <article className="relative p-6 md:p-8 border bg-card transition-shadow overflow-hidden border-zinc-100 rounded-3xl">
                 <div className="flex items-center gap-3 mb-4">
-                  <Image
-                    src={testimonial.avatar || "/placeholder.svg"}
+                  <img
+                    src={testimonial.avatar}
                     alt={testimonial.author}
                     width={48}
                     height={48}
-                    className="rounded-full"
+                    className="rounded-full w-12 h-12 object-cover"
                   />
                   <div>
                     <div className="font-semibold">{testimonial.author}</div>

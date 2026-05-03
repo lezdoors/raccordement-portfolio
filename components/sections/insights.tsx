@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { SectionTitle } from "@/components/ui/section-title"
@@ -36,7 +35,6 @@ export function Insights() {
   return (
     <section id="insights" className="py-20 md:py-32 border-border border-t-0">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
-        {/* Section Header */}
         <div className="flex items-center justify-between mb-12 md:mb-16">
           <SectionTitle className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
             Insights
@@ -51,29 +49,24 @@ export function Insights() {
           </Link>
         </div>
 
-        {/* Insights Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {insights.map((insight) => (
             <Link key={insight.id} href="#" className="group block">
               <article className="h-full">
-                {/* Image */}
                 <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-secondary mb-4">
-                  <Image
-                    src={insight.image || "/placeholder.svg"}
+                  <img
+                    src={insight.image}
                     alt={insight.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
-                {/* Meta */}
                 <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
                   <span>{insight.date}</span>
                   <span>&bull;</span>
                   <span>{insight.readTime}</span>
                 </div>
 
-                {/* Content */}
                 <h3 className="text-lg font-semibold group-hover:text-muted-foreground transition-colors">
                   {insight.title}
                 </h3>
@@ -83,7 +76,6 @@ export function Insights() {
           ))}
         </div>
 
-        {/* Mobile View All */}
         <div className="md:hidden mt-8 text-center">
           <Link
             href="#"

@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowDown } from "lucide-react"
 import { useEffect, useState } from "react"
 
@@ -40,7 +39,7 @@ export function Hero() {
   return (
     <section className="min-h-screen flex flex-col justify-center pt-20 relative overflow-hidden">
       <div className="absolute -right-32 md:-right-48 top-32 md:top-40 w-[500px] h-[500px] md:w-[750px] md:h-[750px] pointer-events-none animate-orb-rotate -z-10 scale-125">
-        <Image src="/images/orb.png" alt="" width={750} height={750} className="w-full h-full" priority />
+        <img src="/images/orb.png" alt="" className="w-full h-full" />
       </div>
 
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-20 md:py-32 md:pb-4 pb-4 pt-4 md:pt-32">
@@ -107,17 +106,14 @@ export function Hero() {
       </div>
 
       <div className="w-full mt-8">
-        <Image
+        <img
           src="/images/designer.png"
           alt="Digital marketing workspace"
-          width={1200}
-          height={800}
           className="w-full h-auto transition-all duration-100 ease-out"
           style={{
             opacity: opacity,
             clipPath: isDesktop ? `inset(${100 - maskReveal}% 0 0 0)` : "none",
           }}
-          priority
         />
       </div>
     </section>
